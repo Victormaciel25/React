@@ -4,10 +4,10 @@ import Titul from "./Titulo"
 function App(){
   return (
     <div>
-      <Titulo/>
-      <Titulo/>
-      <Titulo/>
-      <Titulo/>
+      <Titulo cor="red" nome="Dimitri" paragrafo={true}/>
+      <Titulo cor="blue"/>
+      <Titulo cor="purple"/>
+      <Titulo cor="orangered"/>
     </div>
   )
 }
