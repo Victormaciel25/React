@@ -1,11 +1,17 @@
-function Titulo({nome, paragrafo, cor}){
+import {useState} from "react";
+function Titulo({cor}){
+    const[texto, setTexto] = useState("Um título do estado inicial")
+    const [inputText, setInputText] = useState("");
+
+    function clicou(){
+        setTexto(inputText);
+    }
+
     return (
         <div>
-            <h1 style={{color:cor}}>Oi eu sou {nome ? nome : "Fulano"}</h1>
-            {paragrafo ?
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam iure, cumque, provident ducimus tenetur, expedita velit delectus tempora commodi hic unde consequuntur ex nihil? Quam vel inventore dolor odio doloremque.</p>
-            : <p></p> 
-        }
+            <h1 style={{color:cor}}>{texto}</h1>
+            <input value={inputText} onChange={(e)=>{setInputText(e.target.value)}} type="text"/>
+            <button onClick={clicou}>Mudar</button>
         </div>
     )
 }
